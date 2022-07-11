@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <title>Моя автобіографія</title>
+        <style>
+            h1 {
+                font-weight: 400;
+                text-decoration: underline;
+            }
+            strong {
+                color: blueviolet;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            abbr {
+                text-decoration: underline;
+            }
+            .main-text {
+                margin: 5;
+            }
+            .header-text {
+                text-align: center;
+            }
+            .profile-photo {
+                width: 150px;
+                float: left;
+                border-radius: 25px;
+                border: 3px solid cyan;
+            }
+            .profile-photo:hover {
+                transform: scaleX(1);
+                transform: scaleY(-1);
+              }
+        </style>
+    </head>
+    <body>
+        <h1 class="header-text">Автобіографія</h1>
+        <div class="main-text">
+            <img class="profile-photo" src="https://avatars.githubusercontent.com/u/33974479?v=4" alt="Profile photo">
+            <p>
+                Я, Сергійчук Денис Іванович, народився 8 січня 1994 року в м.Рівне, у сім'ї робітників.
+                Батько Сергійчук Іван Іванович, помер 15 липня 2020 року, мати, Сергійчук Тетяна Володимирівна, працює інженером у
+                <abbr title="Відокремлений Підрозділ">ВП</abbr> <abbr title="Рівненська Атомна Енергетична Станція">РАЕС</abbr>.
+            </p>
+            <p>
+                У 2011 році закінчив <abbr title="Загальна освітня школа">ЗОШ</abbr> №1 ім.Галини Михайлівної чайки. 
+                Відвідував спортивну секцію плавання, маю <strong>I</strong> юнацький розряд. У 2015 році закінчив 
+                <abbr title="Національний технічний університет Київський Політехнічний Інститут">НТУУ КПІ</abbr>.
+                Захоплююся розробкою програмного забезпечення, та програмуванням мікроконтроллерів сімейтва <strong>Arduino</strong>.
+            </p>
+        </div>
+    </body>
+</html>
