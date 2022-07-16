@@ -1,0 +1,26 @@
+body {
+    margin: auto;
+    width: 80%;
+}
+h1 {
+    text-align: center;
+}
+h3 {
+    margin-top: 50px;
+}
+.formula {
+    text-align: center;
+}
+.formula span {
+    background-color: rgb(255, 151, 151);
+    padding: 5px;
+    font-size: 20px;
+}
+.variable {
+    color: firebrick;
+    font-style: italic;
+    font-weight: bold;
+}
+.variable_in_text {
+    font-weight: bold;
+}
