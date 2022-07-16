@@ -1,0 +1,10 @@
+body {
+    margin: auto;
+    width: 80%;
+}
+.sub {
+    vertical-align: super;
+    font-size: small;
+    color: blue;
+    font-weight: bold;
+}
