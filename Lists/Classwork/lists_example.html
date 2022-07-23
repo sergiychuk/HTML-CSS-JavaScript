@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists Example</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .reset-style {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* -=-=-=-=-=-=-=- Unordered lists -=-=-=-=-=-=-=- */
+
+        .custom-style {
+            list-style-type: circle;
+            list-style-position: inside;
+        }
+
+        .image-marker {
+            list-style-image: url(./markers/sun.png);
+        }
+
+        /* Pseudo elements: ::before ::after */
+        .custom-marker {
+            list-style-type: none;
+        }
+
+        .custom-marker li::before {
+            content: '[-] ';
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Pseudo class: ::marker */
+        .styled-marker li::marker {
+            font-size: 18px;
+            color: green;
+        }
+
+        /* -=-=-=-=-=-=-=- Ordered lists -=-=-=-=-=-=-=- */
+
+        .ordered-marker-styled {
+            list-style-type: upper-roman;
+        }
+
+        .custom-ordered-marker {
+            list-style-type: none;
+            counter-reset: number;
+        }
+
+        .custom-ordered-marker li::before {
+            content: '(' counter(number) ') ';
+            counter-increment: number;
+        }
+
+        /* -=-=-=-=-=-=-=- Definition lists -=-=-=-=-=-=-=- */
+
+        .styled-definition-list {
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .styled-definition-list dt {
+            background-color: darkblue;
+            padding: 10px;
+            text-align: center;
+            font-size: larger;
+            margin-top: 20px;
+
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .styled-definition-list dd {
+            background-color: darkslategray;
+            margin-left: 0;
+            padding: 10px;
+
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Pseuso classes: :first-child :last-child :nth-child(even) */
+        .styled-definition-list dt:first-child {
+            margin-top: 0;
+        }
+
+        /* -=-=-=-=-=-=-=- Multilevel lists -=-=-=-=-=-=-=- */
+
+        /* child selector (>): parent>child */
+
+        /* level 2 */
+        .multilevel-list>li>ol {
+            list-style-type: upper-alpha;
+            color: gray;
+        }
+
+        /* level 3 */
+        .multilevel-list>li>ol>li>ul {
+            list-style-type: circle;
+            color: darkblue;
+        }
+
+        /* level 4 */
+        .multilevel-list>li>ol>li>ul>li>ol {
+            list-style-type: upper-roman;
+            color: darkolivegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Working with Lists in HTML</h1>
+
+    <h2>Unordered lists</h2>
+
+    <h3>Default unordered list</h3>
+    <ul>
+        <li>Vlad</li>
+        <li>Nazar</li>
+        <li>Igor</li>
+        <li>Alex</li>
+    </ul>
+
+    <h3>Marker style</h3>
+    <ul class="custom-style">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, excepturi?</li>
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel delectus voluptates minus obcaecati fugit
+            reiciendis impedit ratione neque perferendis quibusdam nemo eos pariatur odit, unde quos. Culpa perferendis
+            reprehenderit ullam?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis et officia eaque.</li>
+        <li>Lorem ipsum dolor sit.</li>
+    </ul>
+
+    <h3>Lists with image markers</h3>
+    <!-- Emmet: ul>li*5>lorem10 -->
+    <ul class="image-marker">
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, ex!</li>
+        <li>Natus nobis iusto, impedit adipisci modi sequi deleniti temporibus voluptas!</li>
+        <li>Perspiciatis at porro similique asperiores, libero fuga illum sint ut!</li>
+        <li>Consequuntur fugiat necessitatibus cum explicabo possimus enim voluptatem repudiandae deleniti!</li>
+        <li>Dolorum repellendus voluptatum, odit accusamus natus eveniet facere facilis molestiae.</li>
+    </ul>
+
+    <h3>Reset style</h3>
+    <ul class="reset-style">
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, corrupti sunt. Minima!</li>
+        <li>Sapiente amet facere sed excepturi repudiandae aut aliquid dolor, libero quod sequi?</li>
+        <li>Voluptate repellat sequi doloremque cum neque qui optio reiciendis ipsa eum animi.</li>
+        <li>Rerum consequatur aspernatur repudiandae recusandae quaerat eius quae magni in deserunt ab!</li>
+        <li>Odio quaerat unde et vel doloribus cupiditate magnam sequi excepturi illo sapiente!</li>
+    </ul>
+
+    <h3>Custom marker style</h3>
+    <ul class="custom-marker">
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, corrupti sunt. Minima!</li>
+        <li>Sapiente amet facere sed excepturi repudiandae aut aliquid dolor, libero quod sequi?</li>
+        <li>Voluptate repellat sequi doloremque cum neque qui optio reiciendis ipsa eum animi.</li>
+        <li>Rerum consequatur aspernatur repudiandae recusandae quaerat eius quae magni in deserunt ab!</li>
+        <li>Odio quaerat unde et vel doloribus cupiditate magnam sequi excepturi illo sapiente!</li>
+    </ul>
+
+    <h3>Styled marker using <code>::marker</code> pseudo class</h3>
+    <ul class="styled-marker">
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, corrupti sunt. Minima!</li>
+        <li>Sapiente amet facere sed excepturi repudiandae aut aliquid dolor, libero quod sequi?</li>
+        <li>Voluptate repellat sequi doloremque cum neque qui optio reiciendis ipsa eum animi.</li>
+        <li>Rerum consequatur aspernatur repudiandae recusandae quaerat eius quae magni in deserunt ab!</li>
+        <li>Odio quaerat unde et vel doloribus cupiditate magnam sequi excepturi illo sapiente!</li>
+    </ul>
+
+    <h2>Ordered lists</h2>
+
+    <h3>Default ordered list</h3>
+    <ol>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquam.</li>
+        <li>Nesciunt cupiditate vitae doloribus provident temporibus maiores error distinctio voluptate.</li>
+        <li>Saepe, voluptas cumque sapiente blanditiis perspiciatis asperiores quia dignissimos distinctio!</li>
+        <li>Ullam corporis facere praesentium beatae doloribus temporibus? Repudiandae, qui ullam?</li>
+    </ol>
+
+    <h3>Marker style</h3>
+    <ol class="ordered-marker-styled">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquam.</li>
+        <li>Nesciunt cupiditate vitae doloribus provident temporibus maiores error distinctio voluptate.</li>
+        <li>Saepe, voluptas cumque sapiente blanditiis perspiciatis asperiores quia dignissimos distinctio!</li>
+        <li>Ullam corporis facere praesentium beatae doloribus temporibus? Repudiandae, qui ullam?</li>
+    </ol>
+
+    <h3>List attributes</h3>
+    <ol start="5" reversed>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquam.</li>
+        <li>Nesciunt cupiditate vitae doloribus provident temporibus maiores error distinctio voluptate.</li>
+        <li>Saepe, voluptas cumque sapiente blanditiis perspiciatis asperiores quia dignissimos distinctio!</li>
+        <li value="20">Ullam corporis facere praesentium beatae doloribus temporibus? Repudiandae, qui ullam?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquam.</li>
+        <li>Nesciunt cupiditate vitae doloribus provident temporibus maiores error distinctio voluptate.</li>
+        <li>Saepe, voluptas cumque sapiente blanditiis perspiciatis asperiores quia dignissimos distinctio!</li>
+        <li>Ullam corporis facere praesentium beatae doloribus temporibus? Repudiandae, qui ullam?</li>
+    </ol>
+
+    <h3>Custom ordered marker style</h3>
+    <ol class="custom-ordered-marker">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquam.</li>
+        <li>Nesciunt cupiditate vitae doloribus provident temporibus maiores error distinctio voluptate.</li>
+        <li>Saepe, voluptas cumque sapiente blanditiis perspiciatis asperiores quia dignissimos distinctio!</li>
+        <li>Ullam corporis facere praesentium beatae doloribus temporibus? Repudiandae, qui ullam?</li>
+    </ol>
+
+    <h2>Definition lists</h2>
+
+    <h3>Default definition list</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed
+            in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages
+            such as JavaScript.</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written
+            in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside
+            HTML and JavaScript.</dd>
+        <dt>JS</dt>
+        <dd>JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the
+            World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for
+            web page behavior, often incorporating third-party libraries.</dd>
+    </dl>
+
+    <h3>Styled definition list</h3>
+    <dl class="styled-definition-list">
+        <dt>HTML</dt>
+        <dd>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed
+            in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages
+            such as JavaScript.</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written
+            in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside
+            HTML and JavaScript.</dd>
+        <dt>JS</dt>
+        <dd>JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the
+            World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for
+            web page behavior, often incorporating third-party libraries.</dd>
+    </dl>
+
+    <h2>Multilevel lists</h2>
+    <ol class="multilevel-list">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, velit?</li>
+        <li>Eveniet odio dignissimos velit doloribus, ex ducimus provident labore culpa?
+            <ol>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Tenetur, at omnis doloremque veritatis natus expedita distinctio.</li>
+                <li>Labore quisquam optio itaque dolore? Reiciendis, cumque tenetur?
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Iste ex adipisci perspiciatis facilis!</li>
+                        <li>Pariatur molestias earum quas voluptas.
+                            <ol>
+                                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                                <li>Modi debitis excepturi accusantium eos quas.</li>
+                            </ol>
+                        </li>
+                        <li>Explicabo totam fuga maiores itaque.</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>Sed magni iste ipsa dolor accusamus at autem sapiente accusantium.</li>
+        <li>Nulla sequi earum doloribus optio, ex odio ullam doloremque suscipit!
+            <ol>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing.</li>
+                <li>Nisi quod error ipsa exercitationem magnam cupiditate?</li>
+            </ol>
+        </li>
+        <li>Sapiente sit esse asperiores inventore doloremque natus, voluptatem ad in?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, velit?</li>
+        <li>Eveniet odio dignissimos velit doloribus, ex ducimus provident labore culpa?
+            <ol>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Tenetur, at omnis doloremque veritatis natus expedita distinctio.</li>
+                <li>Labore quisquam optio itaque dolore? Reiciendis, cumque tenetur?
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Iste ex adipisci perspiciatis facilis!</li>
+                        <li>Pariatur molestias earum quas voluptas.
+                            <ol>
+                                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                                <li>Modi debitis excepturi accusantium eos quas.</li>
+                            </ol>
+                        </li>
+                        <li>Explicabo totam fuga maiores itaque.</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>Sed magni iste ipsa dolor accusamus at autem sapiente accusantium.</li>
+        <li>Nulla sequi earum doloribus optio, ex odio ullam doloremque suscipit!
+            <ol>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing.</li>
+                <li>Nisi quod error ipsa exercitationem magnam cupiditate?</li>
+            </ol>
+        </li>
+        <li>Sapiente sit esse asperiores inventore doloremque natus, voluptatem ad in?</li>
+    </ol>
+</body>
+
+</html>

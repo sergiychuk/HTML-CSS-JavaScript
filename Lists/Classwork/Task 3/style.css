@@ -1,0 +1,25 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 80%;
+    margin: auto;
+}
+.styled-definition-list {
+    color: white;
+}
+
+.styled-definition-list dt {
+    background-color: darkblue;
+    padding: 10px;
+    text-align: center;
+    font-size: larger;
+    margin-top: 20px;
+}
+
+.styled-definition-list dd {
+    background-color: darkslategray;
+    margin-left: 0;
+    padding: 10px;
+}
+.styled-definition-list dt:first-child {
+    margin-top: 0;
+}

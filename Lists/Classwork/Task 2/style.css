@@ -1,0 +1,19 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contents {
+    list-style-type: upper-roman;
+    color: cadetblue;
+}
+.contents li::marker {
+    font-weight: bold;
+    color: black;
+}
+.contents>li>ol>li>ol {
+    list-style-type: lower-alpha;
+    color: cornflowerblue;
+}
+.contents>li>ol {
+    list-style-type: decimal;
+    color: blue;
+}

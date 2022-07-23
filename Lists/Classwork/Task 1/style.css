@@ -1,0 +1,18 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.seasons li {
+    list-style-image: url(./icons/arrow_16.png);
+}
+.winter li {
+    list-style-image: url(./icons/winter_16.png);
+}
+.spring li {
+    list-style-image: url(./icons/spring_16.png);
+}
+.summer li {
+    list-style-image: url(./icons/summer_16.png);
+}
+.autumn li {
+    list-style-image: url(./icons/autumn_16.png);
+}
